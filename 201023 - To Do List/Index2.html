@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Setting the viewport to make your website look good on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:20px">Daily To Do List</h2>
+  <input type="text" id="myInput" placeholder="Pressing Enter should submit...">
+  <span onclick="newElement()" class="addBtn">Add Item</span>
+</div>
+
+<ul id="myUL">
+  <!-- Ignore for now 
+  <li class="checked">Pay bills</li>-->
+  
+  <li class="checked">JS Coding Exercises<span class="close">x</span></li>
+  <li>This Item Should Close<span class="close">x</span></li> 
+</ul>
+
+<button type="button" id="clear-list" onclick="removeAll()">Clear Items</button>
+
+<style>
+
+body {
+  margin:25px;
+  min-width: 200px;
+  max-width: 55%;
+}
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 8px 15px 60px;
+  list-style-type: none;
+  background:#A82FFC;
+  color: #EEE;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  transition: 0.2s;
+  
+  /*make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) 
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}*/
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #D189FF;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #7a08fa;
+  color: #fff;
+  /*text-decoration: line-through;*/
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the header */
+.header {
+  background-color: #300065;
+  padding: 30px 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 70%;
+  padding: 10px;
+  float: left;
+  font-size: 14px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 13px;
+  width: 15%;
+  background: #d9d9d9;
+  color: #555;
+  float: right;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 1;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+#clear-list{
+  width: 25%;
+  font-weight: bold;
+  font-size: 40;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 30px 35%;
+  background-color: rgb(168, 168, 245);
+  color: white;
+  float: right;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 1;
+}
+#clear-list:hover{
+  background-color: blue;
+  color: white;
+}
+</style>
+<script>
+
+// Create a "close" button and append it to each list item
+
+/*The first loop in the code (used with the myNodelist variable) 
+creates a 'close' button, works through every list item, 
+and appends the button at the end of each item. 
+It uses the JavaScript method appendChild() to achieve this task.
+The button provides us with the facility to remove any list item 
+from the browser’s display.*/
+
+var myNodelist = document.getElementsByTagName("LI");
+
+var i;
+
+for (i = 0; i < myNodelist.length; i++) {
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+
+// Click on a close button to hide the current list item
+
+/*The second loop in the code (used with the close variable)
+ removes the list item from the browser window.*/
+ 
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+
+// Add a "checked" symbol when clicking on a list item
+
+var list = document.querySelector('ul');
+
+list.addEventListener('click', function(ev) 
+{
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked',true);
+  }
+}, false);
+
+
+// Create a new list item when clicking on the "Add" button
+
+function newElement() 
+{
+  var li = document.createElement("li");
+
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+
+      if (inputValue === '') {
+        alert("You must write something!");} 
+      else {
+        document.getElementById("myUL").appendChild(li);
+      }
+
+
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+//Clearing the list
+
+function removeAll(){
+  var lst = document.getElementsByTagName("ul");
+    lst[0].innerHTML = "";
+}
+</script>
+</body>
+</html>

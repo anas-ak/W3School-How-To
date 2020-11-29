@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+            
+    <body>
+
+        <h2> Tabs (V1) </h2>
+
+        <p>Click on the buttons inside the tabbed menu:</p>
+
+        <!--Create a div-->
+
+        <div class="tab">
+
+            <!--Create a button that when clicked, calls a function event by id -->
+            <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+            <button class="tablinks" onclick="openCity(event, 'Delhi')">Delhi</button>
+            <button class="tablinks" onclick="openCity(event, 'Glasgow')">Glasgow</button>
+        </div>
+
+        <!--Each tab is also a div-->
+
+            <!--Create a div with of Class tabcontent-->
+        <div id="London" class="tabcontent">
+            <h3>London</h3>
+            <p>London is the capital of England.</p>
+            <span onclick="this.parentElement.style.display='none'" class="close">&times</span>
+        </div>
+
+        <div id="Delhi" class="tabcontent">
+            <h3>Delhi</h3>
+            <p>Delhi is the capital of India.</p>
+            <span onclick="this.parentElement.style.display='none'" class="close">&times</span>
+        </div>
+
+        <div id="Glasgow" class="tabcontent">
+            <h3>Glasgow</h3>
+            <p>Glasgow is the capital of Scotland.</p>
+            <span onclick="this.parentElement.style.display='none'" class="close">&times</span>
+        </div>
+
+        <script type="text/javascript" src="app.js"></script>
+
+    </body>
+</html>

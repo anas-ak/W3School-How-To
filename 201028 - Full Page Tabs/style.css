@@ -1,0 +1,48 @@
+
+*{box-sizing: border-box;}
+
+ /*Set height of body and the document to 100%*/
+
+ body, html {
+     height: 80%;
+     margin: 10;
+     padding: 10px;
+     font-family: "Lato", Arial;
+ }
+
+ /*Style the tab links*/
+
+ .tablink {
+     background-color:rgb(170, 168, 168);
+     color: white;
+     font-weight: bold;
+     float: left;
+     border: none;
+     outline: none;
+     cursor: pointer;
+     padding: 14px 16px;
+     font-size: 17px;
+     width: 25%
+ }
+ 
+ .tablink:hover {
+     background-color: lightgrey;
+ }
+
+ /*Style the tab content (and add height: 100% for full page content)*/
+
+ .tabcontent {
+     color: white;
+     display: none;
+     padding: 100px 20px;
+     height: 100%;
+ }
+
+ /*The Home Id*/
+ #Home {background-color: lightsteelblue;}
+ /*The News Id*/
+ #News {background-color: lightcoral;}
+ /*The Contact Id*/
+ #Contact {background-color: lightseagreen;}
+ /*The About Id*/
+ #About {background-color: mediumseagreen;}

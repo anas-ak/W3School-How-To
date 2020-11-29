@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Setting the viewport to make your website look good on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:20px">Daily To Do List</h2>
+  <input type="text" id="myInput" placeholder="Pressing Enter should submit...">
+  <span onclick="newElement()" class="addBtn">Add Item</span>
+</div>
+
+<ul id="myUL">
+  <!-- Ignore for now 
+  <li class="checked">Pay bills</li>-->
+  
+  <li class="checked">JS Coding Exercises<span class="close">x</span></li>
+  <li>This Item Should Close<span class="close">x</span></li> 
+</ul>
+
+<button type="button" id="clear-list" onclick="removeAll()">Clear Items</button>
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>

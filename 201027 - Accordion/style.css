@@ -1,0 +1,64 @@
+            
+/*Accordion class - State 1*/
+
+.accordion  {
+    
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+
+    padding: 18px;
+    width: 50%;
+    border: none;
+    text-align: left;
+    outline: none;
+
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+/*Adds active class to element  */
+
+.active, .accordion:hover {
+
+    background-color: yellow;
+}
+
+h2 {
+    font-family: monospace;
+    font-size: 18px;
+    border-style: dashed;
+    border-width: 2px;
+    padding: 20px 0px 20px 120px;
+    max-width: 40.5%;
+}
+
+/*Accordion State 2*/
+
+.accordion::after {
+
+    content: '\002B';       /*Unicode for the '+' sign*/
+    color: red;           /*color of the '+' sign*/
+    font-weight: bold;
+    float: right;           /*aligns itself to the right*/
+    margin-left: 5px;       /*5px away from the margin*/
+}
+
+/*Active Class afterwards*/
+
+.active:after {
+    content: "\2212";       /*Uncode for the '-' sign*/
+    color:green;
+    
+}
+
+/*Panel class*/
+
+.panel {
+    padding: 0 18px;
+    background-color: cyan;
+    max-height: 0;
+    max-width: 47.4%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
