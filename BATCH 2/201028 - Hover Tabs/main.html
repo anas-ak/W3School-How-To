@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, index-scale:1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <h2>Hover Tabs</h2>
+        <p> Move the mouse over a button inside the tabbed menu: </menu></p>
+
+        <!--This is the first div, the buttons on the left-->
+
+        <div class="tab">
+            <button class="tablinks" onmouseover="openCity(event, 'London')">London</button>
+            <button class="tablinks" onmouseover="openCity(event, 'Paris')">Paris</button>
+            <button class="tablinks" onmouseover="openCity(event, 'Istanbul')">Istanbul</button>
+        </div>
+
+        <!--These are the divs that display on the right-->
+
+        <div id="London" class="tabcontent">
+            <h3>London</h3>
+            <p>London is the capital of England.</p>
+        </div>
+
+        <div id="Paris" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p> 
+          </div>
+          
+          <div id="Istanbul" class="tabcontent">
+            <h3>Istanbul</h3>
+            <p>Istanbul is the capital of Turkey.</p>
+          </div>
+
+        <!--Third div which clears everything-->
+
+        <div class="clearfix"></div>
+        
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

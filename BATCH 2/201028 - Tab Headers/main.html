@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <p>Click on the buttons inside the tabbed menu</p>
+
+        <div id="London" class="tabcontent">
+            <h1>London</h1>
+            <p>London is the capital of England.</p>
+        </div>
+
+        <div id="Paris" class="tabcontent">
+            <h1>Paris</h1>
+            <p>Paris is the capital of France.</p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h1>Tokyo</h1> 
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+        <div id="Oslo" class="tabcontent">
+            <h1>Oslo</h1>
+            <p>Oslo is the capital of Norway.</p>
+        </div>
+
+        <button class="tablink" onclick="openCity('London', this, 'red')"  id="defaultOpen">London</button>
+
+        <button class="tablink" onclick="openCity('Paris', this, 'green')" id="defaultOpen">Paris</button>
+
+        <button class="tablink" onclick="openCity('Tokyo', this, 'blue')" id="defaultOpen">Tokyo</button>
+
+        <button class="tablink" onclick="openCity('Oslo', this, 'orange')" id="defaultOpen">Oslo</button>
+
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

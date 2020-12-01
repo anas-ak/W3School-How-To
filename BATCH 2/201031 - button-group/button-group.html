@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .btn-group button {
+                background-color: #4caf50;
+                border: 1px solid green;
+                color: white;
+                padding: 10px 24px;
+                cursor: pointer;
+                float: left;
+                width: 20%;
+            }
+
+            /*Clear floats (clearfix hack)*/
+            .btn-group:after {
+                content: "";
+                clear: both;
+                display: table; 
+            }
+
+            .btn-group:not(:last-child) {
+                border-right: none;
+            }
+
+            /*Add a background color on hover*/
+            .btn-group button:hover {
+                background-color: #3e8e41;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Button Group</h1>
+        <div class="btn-group">
+            <button>Apple</button>
+            <button>Samsung</button>
+            <button>Sony</button>
+        </div>
+    </body>
+</html>
