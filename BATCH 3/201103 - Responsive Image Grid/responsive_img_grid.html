@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: Calibri;
+            }
+
+            .header {
+                text-align: center;
+                padding: 32px;
+            }
+
+            .row {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                padding: 0 4px;
+
+            }
+
+            /*Create 4 equal columns that sit next to each other*/
+            .column {
+                -ms-flex: 25%;
+                flex: 25%;
+                max-width: 25%;
+
+                padding: 0 4px;
+            }
+
+            .column img {
+                margin-top: 8px;
+                vertical-align: middle;
+                width: 100%;
+            }
+
+            /*Responsive layout - makes a two-column layout instead of 4*/
+            @media screen and (max-width: 800px) {
+                .column{
+                    -ms-flex: 50%;
+                    flex: 50%;
+                    max-width: 50%;
+                }
+            }
+
+            /*Responsive layout - makes the 2-columns stack on top of each other*/
+            @media screen and (max-width: 600px) {
+                .column {
+                    -ms-flex: 100%;
+                    flex: 100%;
+                    max-width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Responsive Image Grid</h1>
+            <p>Resize the browser window to see the responsive effect.</p>
+        </div>
+
+        <!--The photo grid-->
+        <div class="row">
+            <div class="column">
+                <img src="img_mountains_wide.jpg" style="width:100%">
+                <img src="img_nature_wide.jpg" style="width:100%">
+                <img src="img_lights.jpg" style="width:100%">
+                <img src="img_snow_wide.jpg" style="width:100%">
+                <img src="img_woods_wide.jpg" style="width:100%">
+                <img src="img_cterre.jpg" style="width:100%">
+            </div>
+
+            <div class="column">
+                <img src="1.jpg" style="width:100%;">
+                <img src="2.jpg" style="width:100%;">
+                <img src="3.jpg" style="width:100%;">
+                <img src="4.jpg" style="width:100%;">
+                <img src="5.jpg" style="width:100%;">
+                <img src="6.jpg" style="width:100%;">
+            </div>
+
+            <div class="column">
+                <img src="img_cterre.jpg" style="width:100%">
+                <img src="img_snow_wide.jpg" style="width:100%">
+                <img src="img_mountains_wide.jpg" style="width:100%">
+                <img src="img_lights.jpg" style="width:100%">
+                <img src="img_nature_wide.jpg" style="width:100%">
+                <img src="img_woods_wide.jpg" style="width:100%">
+
+            </div>
+
+            <div class="column">
+                <img src="4.jpg" style="width:100%;">
+                <img src="5.jpg" style="width:100%;">
+                <img src="2.jpg" style="width:100%;">
+                <img src="6.jpg" style="width:100%;">
+                <img src="1.jpg" style="width:100%;">
+                <img src="3.jpg" style="width:100%;">
+            </div>
+        </div>    
+    </body>
+
+</html>

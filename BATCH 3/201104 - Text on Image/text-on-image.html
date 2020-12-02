@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            .container {
+                position: relative;
+                width: 700px;
+                height: 400px;
+                font-size: 18px;
+                text-align: center;
+                font-family: monospace;
+                font-weight: bold;
+                color: white;
+            }
+
+            .bottom-left {
+                position: absolute;
+                bottom: 8px;
+                left: 16px;
+            }
+
+            .top-left {
+                position: absolute;
+                top: 8px;
+                left: 16px;
+            }
+
+            .top-right {
+                position: absolute;
+                top: 8px;
+                right: 16px;
+            }
+
+            .bottom-right {
+                position: absolute;
+                bottom: 8px;
+                right: 16px;
+            }
+
+            .centered {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Text on Image</h2>
+        <p>How to place text over an image</p>
+
+        <div class="container">
+            <img src="img_snow_wide.jpg" alt="Snow" style="width:700px; height:400px;">
+            <div class="bottom-left">Bottom-Left</div>
+            <div class="bottom-right">Bottom-Right</div>
+            <div class="top-left">Top-Left</div>
+            <div class="top-right">Top-Right</div>
+            <div class="centered">Centered</div>
+        </div>
+    </body>
+</html>

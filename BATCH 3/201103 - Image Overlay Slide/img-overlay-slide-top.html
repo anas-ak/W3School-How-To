@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            .container {
+                position: relative;
+                width: 250px;
+                height: 250px;
+            }
+
+            .image {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            .overlay {
+                position: absolute;
+                bottom: 100%;
+                left: 0;
+                right: 0;
+                background-color: #38add4;
+                overflow: hidden;
+                width: 250px;
+                height: 0x;
+                transition: 0.5s ease;
+            }
+
+            .container:hover .overlay{
+                bottom: 0;
+                height: 100%;
+            }
+
+            .text {
+                color: white;
+                border-radius: 100%;
+                font-size: 20px;
+                font-family: Arial;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Slide in overlay from the top</h2>
+        <p>Hover over the image to see the effect</p>
+
+        <div class="container">
+            <img src="img_avatar2.png" class="image" alt="Avatar">
+            <div class="overlay">
+                <div class="text">Hello World</div>
+            </div>
+        </div>
+    </body>
+</html>

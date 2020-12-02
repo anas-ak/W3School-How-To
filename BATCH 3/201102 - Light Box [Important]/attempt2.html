@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html   lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="lightbox-style.css">
+    </head>
+    <body>
+        <h2 style="text-align:center">Lightbox</h2>
+
+        <p>Click on any image to open the Lightbox</p>
+        <p>When any of these images is clicked, the onclick="" calls the openModal() function and currentSlide() function.</p>
+
+        <div class="row">
+            <div class="column">
+                <img src="img_nature_wide.jpg" style="width:100%; height: 125px;" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="img_mountains_wide.jpg" style="width:100%; height: 125px;" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="img_snow_wide.jpg" style="width:100%; height: 125px;" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="img_woods_wide.jpg" style="width:100%; height: 125px;" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="img_lights.jpg" style="width:100%; height: 125px;" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="img_cterre.jpg" style="width:100%; height: 125px;" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+            </div>
+        </div>
+
+        <!--New page with modal background-->
+        <div id="myModal" class="modal">
+            
+            <!--That close button-->
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            
+            <!--The actual images (slides) with numbers in the corner-->
+            <div class="modal-content">
+
+                <div class="mySlides">
+                    <div class="numberText">1 / 6</div>
+                    <img src="img_nature_wide.jpg" style="width:100%;">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numberText">2 / 6</div>
+                    <img src="img_mountains_wide.jpg" style="width:100%;">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numberText">3 / 6</div>
+                    <img src="img_snow_wide.jpg" style="width:100%;">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numberText">4 / 6</div>
+                    <img src="img_woods_wide.jpg" style="width:100%;">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numberText">5 / 6</div>
+                    <img src="img_lights.jpg" style="width:100%;">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numberText">6 / 6</div>
+                    <img src="img_cterre.jpg" style="width:100%;">
+                </div>
+
+                <!--placing the 'prev' & 'next' buttons-->
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!--placing the caption container below the main images-->
+
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <!--Responsive Grid of demo images (dots) to hover over and choose from-->
+
+                <div class="column">
+                    <img class="demo cursor" src="img_nature_wide.jpg" style="width:100%; height: 125px;" onclick="currentSlide(1)" alt="Nature">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="img_mountains_wide.jpg" style="width:100%; height: 125px;" onclick="currentSlide(2)" alt="Mountains">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="img_snow_wide.jpg" style="width:100%; height: 125px;" onclick="currentSlide(3)" alt="Snow">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="img_woods_wide.jpg" style="width:100%; height: 125px;" onclick="currentSlide(4)" alt="Woods">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="img_lights.jpg" style="width:100%" onclick="currentSlide(5)" alt="Lights">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="img_cterre.jpg" style="width:100%" onclick="currentSlide(6)" alt="Cinque Terre">
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

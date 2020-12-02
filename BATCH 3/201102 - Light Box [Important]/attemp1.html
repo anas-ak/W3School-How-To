@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            /*Best pracitice's "reset"*/
+            html {box-sizing: border-box;}
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            /*You define the style of our previews here, 
+            you are using flex to dislay the images reponsively*/
+            preview {
+                width: 100%;
+            }
+
+            .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .row > .column {
+                padding: 0.8px;
+            }
+
+            .column {
+                float: left;
+                width: 33.33%;
+                object-fit: cover;
+            }
+
+            /*Now you want to define what the lightbox will look like.
+            Note that you have the display set as none. You don't want
+            it to show until the user clicks on one of the previews.
+            You will change this display property with JS */
+
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                padding: 10px 62px 0px 62px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: black;
+            }
+
+            .modal-content {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: auto;
+                padding: 0 0 0 0;
+                width: 80%;
+                max-width: 1200px;
+            }
+
+            /*Same with your slides, you set the display to none, 
+            because you want to choose which one is shown at a time*/
+
+            .slide {
+                display: none;
+            }
+
+            .image-slide {
+                width: 100%;
+            }
+
+            .modal-preview {
+                width: 100%;
+            }
+
+            .dots {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            /*You want the previews a little transparent
+            to show that they are "inactive". You then add
+            an .active or :hover class to animate the selections
+            for your user when they interact with your controls
+            and clickable content*/
+
+            img.preview, img.modal-preview {
+                opacity: 0.6;
+            }
+
+            img.active, .preview:hover, .modal-preview:hover {
+                opacity: 1;
+            }
+
+            img.hover-shadow {
+                transition: 0.3s;
+            }
+
+            .hover-shadow:hover {
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            }
+
+            .close {
+                color: white;
+                position: absolute;
+                top: 10px;
+                right: 25px;
+                font-size: 35px;
+                font-weight: bold;   
+            }
+
+            .close:hover, .close:focus {
+                color: #999;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .previous, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -50px;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .previous:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+        </style>
+    </head>
+    <body>
+        <!--Here is your access point for your user, 
+        a preview of the images you wish to display.
+        You use the onclick="" event handler to execute the
+        methods you wlll define in the JS-->
+
+        <div class="row">
+            <div class="column">
+                <img src="img_mountains_wide.jpg" style = "width: 100%; height: 500px;" onclick="openLightBox();toSlide(1)" class="hover-shadow preview" alt="Them Mountains"/>
+            </div>
+            <div class="column">
+                <img src="img_snow_wide.jpg" style = "width: 100%; height: 500px;" onclick="openLightBox();toSlide(2)" class="hover-shadow preview" alt="Snowy Tree"/>
+            </div>
+            <div class="column">
+                <img src="img_woods_wide.jpg" style = "width: 100%; height: 500px;" onclick="openLightBox();toSlide(3)" class="hover-shadow preview" alt="Them Trees"/>
+            </div>
+        </div>
+
+        <!--This is your lightbox, it is contained in a modal. Here you provide all the images, controls and another set of preview images
+        as the dots. Dots show your user which image is currently active. Note the use of &times; entities-->
+
+        <div id="lightbox" class="modal">
+            <span class="close pointer" onclick="closeLightbox()">&times;</span>
+            <div class="modal-content">
+
+                <div class="slide">
+                    <img src="img_mountains_wide.jpg" class="image-slide" alt="Them Mountains"/>
+                </div>
+
+                <div class="slide">
+                    <img src="img_snow_wide.jpg" class="image-slide" alt="Snowy Tree"/>
+                </div>
+
+                <div class="slide">
+                    <img src="img_woods_wide.jpg" class="image-slide" alt="Them Trees"/>
+                </div>
+
+                <a class="previous" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+                <div class="dots">
+                    <div class="column">
+                        <img src="img_mountains_wide.jpg" class="modal-preview hover-shadow" onclick="toSlide(1)" alt="Them Mountains"/>
+                    </div>
+                    <div class="column">
+                        <img src="img_snow_wide.jpg" class="modal-preview hover-shadow" onclick="toSlide(2)" alt="Snowy Tree"/>
+                    </div>
+                    <div class="column">
+                        <img src="img_woods_wide.jpg" class="modal-preview hover-shadow" onclick="toSlide(13)" alt="Them Trees"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            /*Initialise here and run showSlide() to give your lightbox a default state*/
+
+            let slideIndex = 1;
+            showSlide(slideIndex);
+
+            /*The logic of the lightbox. This will decide which slide to show and which dot is active*/
+
+            function showSlide(n) {
+                const slides = document.getElementsByClassName('slide');
+                let modalPreviews = document.getElementsByClassName('modal-preview');
+
+                if(n > slides.length) {
+                    slideIndex = 1;
+                }
+
+                if(n < 1) {
+                    slideIndex = slides.length;
+                }
+
+                for(let i=0; i < modalPreviews.length; i++) {
+                    modalPreviews[i].className =  modalPreviews[i].className.replace(" active", "");
+                }
+
+                slides[slideIndex - 1].style.display = "block";
+                modalPreviews[slideIndex - 1].className += " active";
+            }
+
+            /*Provide the functionality for your clickable content, which is your previews, dots, controls and close button*/
+
+            function openLightBox() {
+                document.getElementById("lightbox").style.display = "block";
+            }
+
+            function closeLightbox() {
+                document.getElementById("lightbox").style.display = "none";
+            }
+
+            /*Assign new values to our slideIndex*/
+            
+            function changeSlide(n) {
+                showSlide(slideIndex += n);
+            }
+
+            function toSlide(n) {
+                showSlide(slideIndex = n);
+            }
+
+        </script>
+    </body>
+</html>

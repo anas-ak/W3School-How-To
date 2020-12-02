@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            .column {
+                float: left;
+                width: 33.3%;
+                padding: 5px;
+            }
+
+            /*Clearfix (clear floats)*/
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            /*Responsive layout - makes the 3 columns stack on top of each other instead of next to each other*/
+            @media screen and (max-width: 500px) {
+                .column {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Responsive "Side by Side" Images</h2>
+        <p>How to create side-by-side images with the CSS float property.</p>
+        <p>On screens that are 500px wide or less, the images will stack on top of each other instead of next to each other</p>
+        <p>Resize the browser</p>
+
+        <div class="row">
+            <div class="column">
+                <img src="img_cterre.jpg" height="270px">
+            </div>
+            <div class="column">
+                <img src="img_lights.jpg" height="270px">
+            </div>
+            <div class="column">
+                <img src="img_snow_wide.jpg" height="270px">
+            </div>
+        </div>
+    </body>
+</html>

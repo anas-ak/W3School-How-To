@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="img_woods_wide.jpg" style="width:100%; height:500px">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="img_cterre.jpg" style="width:100%; height:500px">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="img_mountains_wide.jpg" style="width:100%; height:500px">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="img_lights.jpg" style="width:100%; height:500px">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="img_nature_wide.jpg" style="width:100%; height:500px">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="img_snow_wide.jpg" style="width:100%; height:500px">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <img class="demo cursor" src="img_woods_wide.jpg" style="width:100%; height: 150px;" onclick="currentSlide(1)" alt="The Woods">
+                </div>
+            
+                <div class="column">
+                    <img class="demo cursor" src="img_cterre.jpg" style="width:100%; height: 150px;" onclick="currentSlide(2)" alt="Cinque Terre">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="img_mountains_wide.jpg" style="width:100%; height:150px;" onclick="currentSlide(3)" alt="Mountains & fjords">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="img_lights.jpg" style="width:100%; height: 150px;" onclick="currentSlide(4)" alt="The Lights">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="img_nature_wide.jpg" style="width:100%; height: 150px;" onclick="currentSlide(5)" alt="Nature & sunrise">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="img_snow_wide.jpg" style="width:100%; height: 150px;" onclick="currentSlide(6)" alt="Snow & Tree">
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

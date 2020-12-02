@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .container {
+                position: relative;
+                width: 450px;
+            }
+
+            .image {
+                opacity: 1;
+                display: block;
+                width: 450px;
+                height: 300px;
+                transition: 0.5s ease;
+                backface-visibility: hidden;
+            }
+
+            .container:hover .image {
+                filter: grayscale(100%);
+            }
+        </style>
+    </head>
+    <body>
+        <p>Convert the image to grayscale</p>
+        <div class="container">
+            <img src="img_cterre.jpg" alt="Cinque Terre" class="image">
+        </div>
+    </body>
+</html>

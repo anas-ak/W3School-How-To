@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .container {
+                position: relative;
+                width: 250px;
+                height: auto;
+            }
+
+            .image {
+                width: 100%;
+                height: auto;
+            }
+
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #008cba;
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                transform: scale(0);
+                transition: 0.3s ease;
+            }
+
+            .container:hover .overlay {
+                transform: scale(1);
+            }
+
+            .text {
+                color: white;
+                font-size: 19px;
+                font-family: monospace;
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                text-align: center;
+                transform: translate(-50%, -50%);
+                white-space: nowrap;
+            }
+        </style>
+
+        <body>
+            <h2>Image Overlay Zoom</h2>
+            <p>Hover over the image to see the effect</p>
+            <div class="container">
+                <img src="img_avatar2.png" class="image" alt="Avatar">
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                </div>
+            </div>
+        </body>
+    </head>
+</html>

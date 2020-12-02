@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            .container {
+                position: relative;
+                font-family: monospace;
+                width: 700px;
+                height: 400px;
+            }
+
+            .text-block {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                background-color: black;
+                color: white;
+                padding-left: 20px;
+                padding-right: 20px;
+                opacity: 0.0;
+                transition: 0.5s ease;
+            }
+
+            .container:hover .text-block {
+                opacity: 0.8;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Image Text Blocks</h2>
+        <p>How to place text blocks over an image</p>
+        
+        <div class="container">
+            <img src="img_snow_wide.jpg" alt="Snow" style="width:700px; height:400px;">
+            <div class="text-block">
+                <h4>Snow</h4>
+                <p>Lovely snow-covered tree</p>
+            </div>
+        </div>
+    </body>
+</html>
