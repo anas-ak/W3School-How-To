@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-family: calbri;}
+
+        form {
+            border: 3px solid #f1f1f1;
+            font-family: calibri;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        input[type=text], input[type=submit] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type=checkbox] {
+            margin-top: 16px;
+        }
+
+        input[type=submit] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+        }
+
+        input[type=submit]:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+<form action="/action_page.php">
+    <div class="container">
+        <h2>Subscribe to our newsletter</h2>
+        <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
+    </div>
+
+    <div class="container" style="background-color: white;">
+        <input type="text" name="name" id="name" placeholder="Enter Name" required>
+        <input type="text" name="email" id="email" placeholder="Enter E-mail Address" required>
+        <label><input type="checkbox" checked="checked" name="checked" id="checked"> Daily Newsletter</label>
+    </div>
+    <div class="container">
+    <input type="submit" value="Register">
+    </div>
+</form>  
+</body>
+</html>
