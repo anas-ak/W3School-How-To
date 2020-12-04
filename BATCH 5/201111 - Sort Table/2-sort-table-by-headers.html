@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort a HTML table alphabetically</title>
+
+    <style>
+        table {
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            cursor: pointer;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 16px;
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <p><strong>Click the headers to sort the table</strong></p>
+    <p>The first time you click, the sorting direction is ascending (A to Z)</p>
+    <p>Click again, and the sorting direction will be descending (Z to A)</p>
+
+<table id = "myClientTable">
+
+    <tr>
+        <!--When a header is clicked, run the sortTable function,
+        with a parameter, 0 for sorting by names, 1 for sorting by country-->
+        <th onclick="sortTable(0)">Name</th>
+        <th onclick="sortTable(1)">City</th>
+        <th onclick="sortTable(2)">Country</th>
+    </tr>
+    <tr>
+        <td>Berglunds Snabbkop</td>
+        <td>Stockholm</td>
+        <td>Sweden</td>
+    </tr>
+    <tr>
+        <td>North/South</td>
+        <td>London</td>
+        <td>United Kingdom</td>
+    </tr>
+
+    <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Berlin</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>Koniglick Essen</td>
+        <td>Munich</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>Magazzini Alimentari Riuniti</td>
+        <td>Venice</td>
+        <td>Italy</td>
+    </tr>
+    <tr>
+        <td>Paris Specialites</td>
+        <td>Paris</td>
+        <td>France</td>
+    </tr>
+    <tr>
+        <td>Island Trading</td>
+        <td>Manchester</td>
+        <td>United Kingdom</td>
+    </tr>
+
+    <tr>
+        <td>Laughing Bacchus Winecellars</td>
+        <td>Toronto</td>
+        <td>Canada</td>
+    </tr>
+    <tr>
+        <td>Unilever</td>
+        <td>Berlin</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>Marks & Spencer</td>
+        <td>Birmingham</td>
+        <td>United Kingdom</td>
+    </tr>
+    <tr>
+        <td>Carrefour</td>
+        <td>Paris</td>
+        <td>France</td>
+    </tr>
+    <tr>
+        <td>ALDI</td>
+        <td>Munich</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>JB Hi-Fi</td>
+        <td>Sydney</td>
+        <td>Australia</td>
+    </tr>
+
+    <tr>
+        <td>ADNOC</td>
+        <td>Abu Dhabi</td>
+        <td>United Arab Emirates</td>
+    </tr>
+</table>
+
+<script src="header-table-sort.js"></script>
+</body>
+</html>

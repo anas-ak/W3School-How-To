@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: calibri;
+        }
+
+        .topNav {
+            overflow: hidden;
+            background-color: #e9e9e9;
+        }
+
+        .topNav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topNav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topNav a.active {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .topNav .login-container {
+            float: right;
+        }
+
+        .topNav input[type=text] {
+            padding: 6px;
+            margin-left: 10px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+            width: 120px;
+        }
+
+        .topNav .login-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background-color: #555;
+            color: white;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .topNav .login-container button:hover {
+            background-color: green;
+        }
+
+        @media screen and (max-width:600px) {
+            .topNav .login-container {
+                float: none;
+            }
+            .topNav a, .topNav input[type=text], .topNav .login-container button {
+                float: none;
+                display: none;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+            .topNav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="topNav">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <div class="login-container">
+            <form action="/action_page.php">
+                <input type="text" style="font-family: calibri;" name="uname" id="uname" placeholder="Username">
+                <input type="text" style="margin-right: 10px;font-family: calibri" name="psw" id="psw" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <div style="padding-left: 16px;">
+        <h2>Responsive Login Form in Navbar</h2>
+        <p>Navigation menu with a login form and a submit button inside it</p>
+        <p>Resize the browser window to see the responsive effect</p>
+    </div>
+</body>
+</html>

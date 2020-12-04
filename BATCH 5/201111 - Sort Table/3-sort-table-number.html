@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort a HTML table numerically</title>
+    <style>
+        table {
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <p>Click the button to sort the table numerically</p>
+    <p><button onclick="sortTable()">Sort</button></p>
+
+    <table id="myTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Berglunds snabbkop</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>North/South</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Alfreds Futterkiste</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Koniglich Essen</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Magazzini Alimentari Riuniti</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Paris specialites</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Island Trading</td>
+          </tr>
+    </table>
+
+    <script src="num-table-sort.js"></script>
+</body>
+</html>
