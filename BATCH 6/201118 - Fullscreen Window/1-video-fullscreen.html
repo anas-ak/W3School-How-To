@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full screen video</title>
+</head>
+<body style="font-family: calibri">
+    <h2>Fullscreen with Javascript</h2>
+    <p>Click on the button to open the video in fullscreen mode</p>
+    <button onclick="openFullScreen();">Open Video in Fullscreen Mode</button>
+    <p><strong>Tip:</strong> Press the "Esc" key to exit full screen</p>
+
+    <video width="50%" controls id="myVideo">
+        <source src="6s-sample.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        var elem = document.getElementById("myVideo");
+
+        function openFullScreen() {
+            if(elem.requestFullscreen) {
+                elem.requestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>

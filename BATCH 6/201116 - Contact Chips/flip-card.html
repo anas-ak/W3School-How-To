@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: calibri;
+        }
+
+        .flipCard {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flipCard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flipCard:hover .flipCard-inner {
+            transform:rotateY(180deg);
+        }
+
+        .flipCard-front, .flipCard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .flipCard-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .flipCard-back {
+            background-color: #298;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Card Flip with Text</h1>
+    <h3>Hover over the image below:</h3>
+
+    <div class="flipCard">
+        <div class="flipCard-inner">
+            <div class="flipCard-front">
+                <img src="img_avatar_1.png" alt="avatar" style="width:300px; height:300px;">
+            </div>
+            <div class="flipCard-back">
+                <h1>John Doe</h1>
+                <p>Architect & Engineer</p>
+                <p>We love that guy</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .float-right-sm {
+            background-color: yellow;
+        }
+
+        .float-right-lg {
+            background-color: pink;
+        }
+
+        @media (max-width: 768px) {
+            .float-right-sm {
+                float: right;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .float-right-lg {
+                float: right;
+            }
+        }
+
+        .clearfix::after {
+            display: block;
+            clear: both;
+            content: "";
+        }
+    </style>
+</head>
+<body>
+    <h2>Responsive Floats</h2>
+    <p>The float-right-sm class will float right on screens 
+        that are equal to or LESS THAN 768px.
+    </p>
+
+    <p>The float-right-lg will float right on screens that are 
+        equal to or GREATER THAN 769px.
+    </p>
+
+    <p>Note that we also use a clearfix to clear floats.</p>
+    <p>Resize the browser window to see the results.</p>
+
+    <div class="clearfix">
+        <span class="float-right-sm">Float right=&lt;768px</span>
+        <br>
+        <span class="float-right-lg">Float left=&gt;769px</span>
+        <br>
+    </div>
+</body>
+</html>

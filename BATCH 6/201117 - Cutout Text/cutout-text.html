@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: calibri;
+        }
+
+        .image-container {
+            background-image: url("img_woods_wide.jpg");
+            background-size: cover;
+            position: relative;
+            height: 500px;
+        }
+
+        .text {
+            background-color: white;
+            color: black;
+            font-size: 10vw;
+            font-weight: bold;
+            margin: 0 auto;
+            padding: 10px;
+            width: 30%;
+            text-align: center;
+            position: absolute;
+            opacity: 0.9;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            mix-blend-mode:screen;
+        }
+    </style>
+</head>
+<body>
+    <h2>Responsive Cutout Text Effect</h2>
+    <div class="image-container">
+        <div class="text">Trees</div>
+    </div>
+
+    <p>This example creates a responsive cutout text/knockout text - 
+        text that appears cut out on top of a background image.
+    </p>
+    <p>Resize the browser window to see the responsive effect</p>
+    <p><strong>Note:</strong> This example does not work in IE or Edge</p>
+</body>
+</html>

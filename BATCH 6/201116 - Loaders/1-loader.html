@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            animation: spin 1.8s linear infinite;
+        }
+
+        .secondLoader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-bottom: 16px solid blue;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        .thirdLoader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-right: 16px solid green;
+            border-bottom: 16px solid red;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        .fourthLoader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-right: 16px solid green;
+            border-bottom: 16px solid red;
+            border-left: 16px solid pink;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body style="font-family:calibri">
+    <h2>How to create a loader</h2>
+    <h3>Basic Loader</h3>
+    <div class="loader"></div>
+    <br>
+    <h3>Second Loader</h3>
+    <div class="secondLoader"></div>
+    <h3>Third Loader</h3>
+    <div class="thirdLoader"></div>
+    <h3>Fourth Loader</h3>
+    <div class="fourthLoader"></div>
+</body>
+</html>

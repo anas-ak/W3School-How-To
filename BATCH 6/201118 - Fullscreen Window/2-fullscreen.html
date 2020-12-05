@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :fullscreen {
+            background-color: yellow;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fullscreen with JavaScript</h2>
+    <p>Click on the "Open Fullscreen" button to open this page
+        in fullscreen mode. Close it by either clicking the 
+        "Close Fullscreen" button, or pressing the "Esc" key.
+    </p>
+
+    <button onclick="openFullScreen();">Open Fullscreen</button>
+    <button onclick="closeFullScreen();">Close Fullscreen</button>
+
+    <script>
+        var elem = document.documentElement;
+
+        function openFullScreen() {
+            if(elem.requestFullscreen){
+                elem.requestFullscreen();
+            }
+        }
+
+        function closeFullScreen() {
+            if(document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
