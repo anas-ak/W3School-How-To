@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .shape {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+
+        .oval {
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .trapezoid {
+            border-bottom: 50px solid #555;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            height: 0;
+            width: 125px;
+        }
+
+        .rectangle {
+            width: 100px;
+        }
+
+        .parallelogram {
+            width: 100px;
+            transform: skew(20deg);
+            margin-left: 9px;
+        }
+
+        .triangle-up {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 50px solid #555;
+        }
+
+        .triangle-down {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 50px solid #555;
+        }
+
+        .triangle-left {
+	        width: 0;
+	        height: 0;
+	        border-top: 25px solid transparent;
+	        border-right: 50px solid #555;
+	        border-bottom: 25px solid transparent;
+        }
+
+        .triangle-right {
+	        width: 0;
+	        height: 0;
+	        border-top: 25px solid transparent;
+	        border-left: 50px solid #555;
+	        border-bottom: 25px solid transparent;
+        }
+        
+        .column {
+            float: left;
+            width: 33.3%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+            <h2>Square </h2>
+            <div class="shape"></div>
+    
+            <h2>Circle</h2>
+            <div class="shape circle"></div>
+    
+            <h2>Oval</h2>
+            <div class="shape oval"></div>
+        </div>
+
+        <div class="column">
+            <h2>Trapezoid</h2>
+            <div class="trapezoid"></div>
+    
+            <h2>Rectangle</h2>
+            <div class="shape rectangle"></div>
+    
+            <h2>Parallelogram</h2>
+            <div class="shape parallelogram"></div>
+        </div>
+
+        <div class="column">
+            <h2>Triangle Up</h2>
+            <div class="triangle-up"></div>
+
+            <h2>Triangle Down</h2>
+            <div class="triangle-down"></div>
+
+            <h2>Triangle Left</h2>
+            <div class="triangle-left"></div>
+    
+            <h2>Triangle Right</h2>
+            <div class="triangle-right"></div>
+        </div>
+    </div>
+</body>
+</html>

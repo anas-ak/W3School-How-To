@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: calibri;
+            color: white;
+        }
+
+        /*Make 2 of these to split the screen*/
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        /*DIV Element on the left*/
+        .left {
+            left: 0;
+            background-color: #111;
+        }
+
+        /*DIV element on the right*/
+        .right {
+            right: 0;
+            background-color: red;
+        }
+
+        /*Container for centered DIV element*/
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /*Style the container for the avatar image*/
+        .centered img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="split left">
+        <div class="centered">
+            <img src="img_avatar_1.png">
+            <p>Hello</p>
+        </div>
+    </div>
+
+    <div class="split right">
+        <div class="centered">
+            <img src="img_avatar2.png">
+            <p>World</p>
+        </div>
+    </div>
+</body>
+</html>

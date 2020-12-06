@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            font-family: Lato;
+            border: 2px solid #ccc;
+            background-color: #eee;
+            border-radius: 5px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .container::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .container img {
+            float: left;
+            clear: both;
+            border-radius: 50%;
+        }
+
+        .container span {
+            font-size: 20px;
+        }
+
+        .container p {
+            padding-left: 10px;
+            margin-left: 100px;
+        }
+
+        @media (max-width: 500px){
+            .container {text-align: center;}
+            .container img {
+                margin:auto;
+                float: none;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+  <h2>Responsive Testimonials</h2>
+  <p>Resize the browser window to see the effect</p>
+  
+  <div class="container">
+      <img src="irzamTariq.jpg" style="width:90px" alt="test1">
+      <p><span>Irzam Tariq</span> - - - CEO at Mighty Schools</p>
+      <p>Anas saved us from a web disaster. Very grateful</p>
+  </div>
+
+  <div class="container">
+      <img src="mubiShake.jpg" style="width:90px" alt="test2">
+      <p><span>Mubashir Sakhi</span> - - - CEO at ThreeDots</p>
+      <p>Anas was instrumental in getting our web application up and running. Fast and efficient.</p>
+  </div>
+
+  <div class="container">
+      <img src="img_avatar_1.png" alt="test3" width="90px">
+      <p><span>Shahrukh Waheed</span> - - - Head of Production at SOC Films</p>
+      <p>Anas was like a flash of lightning - a bolt of brilliance.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p {
+            text-align: left;
+            font-size: 55px;
+            margin-top: 0px;
+            font-family: "Lato";
+        }
+    </style>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <script>
+
+        /*Set the date we're counting down to*/
+        var countDownDate = new Date("November 20, 2020 22:00:00").getTime();
+        
+        /*Update the countdown every second*/
+        var interval = setInterval(function() {
+            
+            /*Get today's date and time*/
+            var timeNow = new Date().getTime();
+
+
+            /*Find the distance between now and the countdown date*/
+            var distance = countDownDate-timeNow;
+
+            /*Time calculations for days, hours, minutes and seconds*/
+            var days, hours, minutes, seconds;
+
+            days = Math.floor(distance/(1000*60*60*24));
+            hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+            minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+            seconds = Math.floor((distance%(1000*60))/1000);
+
+            /*Output the result in an element with id = "demo"*/
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s till November 20, 2020 - 10PM";
+            document.getElementById("demo2").innerHTML = Math.floor(timeNow/(1000*60*60*24*365.25)) + " years since Jan 1, 1970";
+
+            /*if the countdown is over, write some text*/
+            if(distance < 0) {
+                clearInterval(interval);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            } 
+        }, 1000);  
+    </script>
+</body>
+</html>

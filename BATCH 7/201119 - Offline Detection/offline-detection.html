@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Lato";
+            font-size: 20px;
+        }
+
+        #myDIV {
+            display: none;
+            width: 50%;
+        }
+
+        p{
+            padding: 10px 16px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Click the button to see if the browser is online.</h3>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <div id="myDIV">
+     <p id="demo"  style="background-color: aqua;        color: red;"></p>
+     <p id="demo2" style="background-color: blueviolet;  color: white;"></p>
+     <p id="demo3" style="background-color: chartreuse;  color: red"></p>
+     <p id="demo4" style="background-color: skyblue;     color: orangered"></p>
+     <p id="demo5" style="background-color: coral;       color: white;"></p>
+     <p id="demo6" style="background-color: crimson;     color: white;"></p>
+     <p id="demo7" style="background-color: greenyellow; color: red;"></p>
+     <p id="demo8" style="background-color: magenta;     color: white;"></p>
+    </div>
+    
+    <script>
+        function myFunction() {
+            var y = document.getElementById("myDIV");
+        
+                if(window.getComputedStyle(y).display === "none") {
+                    y.style.display = "block";
+                }
+                else {
+                    y.style.display = "none";
+                }
+        }
+        
+        var browserStatus = navigator.onLine;
+        document.getElementById("demo").innerHTML = "Is Browser Online? " + browserStatus;
+        
+        var cookieInfo = navigator.cookieEnabled;
+        document.getElementById("demo2").innerHTML = "Cookies enabled: " + cookieInfo;
+            
+        var browserApplicationName = navigator.appName;
+        document.getElementById("demo3").innerHTML = "Browser Name: " + browserApplicationName;
+            
+        var applicationCodeName = navigator.appCodeName;
+        document.getElementById("demo4").innerHTML = "Application Code Name: " + applicationCodeName;
+            
+        var browserVersion = navigator.appVersion;
+        document.getElementById("demo5").innerHTML = "Browser Version: " + browserVersion;
+            
+        var browserAgent = navigator.userAgent;
+        document.getElementById("demo6").innerHTML = "Browser Agent: " + browserAgent;
+            
+        var browserPlatform = navigator.platform;
+        document.getElementById("demo7").innerHTML = "Browser Platform: " + browserPlatform;
+            
+        var browserLanguage = navigator.language;
+        document.getElementById("demo8").innerHTML = "Browser Language: " + browserLanguage; 
+
+    </script>
+</body>
+</html>

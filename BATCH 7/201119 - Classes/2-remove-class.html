@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-family: calibri;}
+
+        .myStyle{
+            width: 100%;
+            padding: 25px;
+            background-color: coral;
+            color: white;
+            font-size: 25px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 6px 12px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>Click the "Try it" button to remove the "myStyle" 
+        class from the DIV element: 
+    </p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <br><br>
+    <div id="myDIV" class="myStyle">
+        This is a DIV element.
+    </div>
+
+    <script>
+        function myFunction() {
+            var element = document.getElementById("myDIV");
+            element.classList.remove("myStyle");
+        }
+    </script>
+</body>
+</html>

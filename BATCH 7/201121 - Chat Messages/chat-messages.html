@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .container {
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 15px;
+        }
+
+        .darker {
+            border-color: #ccc;
+            background-color: #ddd;
+            text-align: right;
+        }
+
+        .container::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .container img {
+            float: left;
+            max-width: 60px;
+            width: 100%;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .container img.right {
+            float: right;
+            margin-left: 20px;
+            margin-right: 0;
+        }
+
+        .time-right {
+            float: right;
+            color: #aaa;
+        }
+
+        .time-left {
+            float: left;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h2>Chat Messages with Boss</h2>
+
+    <div class="container">
+        <img src="img_avatar_1.png" style="width:100%">
+        <p>Hello. How are you today?</p>
+        <span class="time-right">11:00</span>
+    </div>
+
+    <div class="container darker">
+        <img src="img_avatar2.png" style="width:100%" class="right">
+        <p>Hey! I'm fine. Thanks for asking</p>
+        <span class="time-left">11:01</span>
+    </div>
+
+    <div class="container">
+        <img src="img_avatar_1.png" style="width:100%">
+        <p>So.. when are you going to be in today?</p>
+        <span class="time-right">11:02</span>
+    </div>
+
+    <div class="container darker">
+        <img src="img_avatar2.png" style="width:100%" class="right">
+        <p>I'm picking up coffee for us. Should be up in 5</p>
+        <span class="time-left">11:03</span>
+    </div>
+
+    <div class="container">
+        <img src="img_avatar_1.png" style="width:100%">
+        <p>Oh sweet! See you soon</p>
+        <span class="time-right">11:05</span>
+    </div>
+</body>
+</html>

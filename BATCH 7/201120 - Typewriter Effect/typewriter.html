@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{font-family: 'Courier';}
+    </style>
+</head>
+<body>
+    <h1 style="font-family:'lato'">Typewriter</h1>
+    <button onclick="myFunction()">Click Me!</button>
+    <p id="demo"></p>
+
+    <script>
+        var i = 0;
+        var txt = "hello... my name is Anas. I'm trying really hard to learn all this again. It's going great!";
+        var speed = 50;
+
+        function myFunction() {
+            if(i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(myFunction, speed);
+            }
+        }
+    </script>
+</body>
+</html>

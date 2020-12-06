@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h2>JavaScript Object Properties</h2>
+    <p>You can delete object properties with the 'delete' keyword</p>
+
+    <p id="demo"></p>
+
+    <script>
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "brown"
+        };
+
+        //delete person.age;
+        document.getElementById("demo").innerHTML =
+        person.firstName + " " + person.lastName + " is " + person.age + " years old.";
+    </script>
+</body>
+</html>

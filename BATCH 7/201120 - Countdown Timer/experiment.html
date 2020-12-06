@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+	body {
+		font-family: "Calibri";
+		font-size: 20px;
+	}
+	
+	#div1 {font-size: 45px; padding-left: 15px;}
+	span{
+		
+		padding: 20px;
+		margin: 15px;
+		background-color: lightgreen;
+	}
+</style>
+</head>
+<body>
+	<h2>Countdown Timer <div id='div1' class="fa"></div></h2>
+	
+	<p>This window will close in...
+	<span id="countDown">60</span>
+	 seconds</p>
+	<script>
+		var seconds = document.getElementById("countDown").textContent;
+		var countdown = setInterval(function() {
+			seconds--;
+			document.getElementById("countDown").textContent = seconds;
+			if(seconds <= 0) window.close();
+			}, 1000);
+			
+		function hourGlass() {
+            var a;
+
+            a = document.getElementById("div1");
+            a.innerHTML = "&#xf251";
+
+            setTimeout(function() {
+                a.innerHTML = "&#xf252";
+            }, 1000);
+
+            setTimeout(function() {
+                a.innerHTML = "&#xf253";
+            }, 2000);
+
+        }
+        hourGlass();
+        setInterval(hourGlass, 3000);	
+	</script>
+</body>
+</html>

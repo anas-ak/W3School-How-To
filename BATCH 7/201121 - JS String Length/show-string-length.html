@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String.length</title>
+    <style>
+        button {
+            background: #4caf50;
+            padding: 6px 14px;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript String Length</h2>
+    <p>The length property returns the length of a string:</p>
+
+    <p>Enter a string</p>
+    <input type="text" name="userEntry" id="userEntry" placeholder="Enter text here..">
+    <button type="submit" onclick = "sendText()">Submit</button>
+    <p id = "demo"></p>
+
+    <script>
+        var txt = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        var len = txt.length;
+
+        document.getElementById("demo").innerHTML = 
+        "The length of string: " + txt + " is: "+ 
+        len;
+
+        function sendText(){
+            var newString = document.getElementById("userEntry").innerHTML;
+            var newLen = newString.length;
+
+            document.getElementById("demo").innerHTML = newLen;
+        }
+        
+
+        
+    </script>
+</body>
+</html>

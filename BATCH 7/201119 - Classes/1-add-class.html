@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .myStyle {
+            width: 100%;
+            padding: 25px;
+            background-color: coral;
+            color: white;
+            font-size: 25px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <p>Click the "Try it" button to add the "myStyle" class 
+        to the DIV element
+    </p>
+
+
+    <button onclick="myFunction()">Try it</button>
+    <br><br>
+    <div id="myDiv" style="border: solid;">
+        This is a DIV element.
+    </div>
+
+    <script>
+        function myFunction() {
+            var element = document.getElementById("myDiv");
+            element.classList.add("myStyle");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #myContainer {
+            width: 400px;
+            height: 400px;
+            position: relative; /*THIS IS IMPORTANT*/
+            background: lightseagreen
+        }
+
+        #myAnimation {
+            width: 50px;
+            height: 50px;
+            position: absolute; /*THIS IS IMPORTANT*/
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <p><button onclick="downMove()">Go Down</button></p>
+    <p><button onclick="myMove()">Go Diagnol Down</button></p>
+    <p><button onclick="secondMove()">Go Right</button></p>
+
+    <div id="myContainer">
+        <div id="myAnimation"></div>
+    </div>
+
+    <script>
+        function myMove() {
+            var elem = document.getElementById("myAnimation");
+            var pos = 0;
+
+            //This is the TIMER
+            var id = setInterval(frame, 10);
+            
+            function frame() {
+
+                if(pos == 350) {
+                    clearInterval(id);
+                }
+                else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+
+        function secondMove() {
+            var elem = document.getElementById("myAnimation");
+            var pos = 0;
+
+            //This is the pace (frame/second)
+            var id = setInterval(frame, 10);
+            
+            function frame() {
+
+                if(pos == 350) {
+                    clearInterval(id);
+                }
+                else {
+                    pos++;
+                    //elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+
+        function downMove() {
+            var elem = document.getElementById("myAnimation");
+            var pos = 0;
+
+            //This is the pace (frame/second)
+            var id = setInterval(frame, 10);
+            
+            function frame() {
+
+                if(pos == 350) {
+                    clearInterval(id);
+                }
+                else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
